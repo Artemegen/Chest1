@@ -1,0 +1,31 @@
+using System;
+namespace test;
+class Program
+{
+    static void Main(string[] args)
+    {
+
+
+        Console.WriteLine("Введите длину массива: ");
+        int sizeArray = Convert.ToInt32(Console.ReadLine());
+        int[] array = new int[sizeArray];
+
+        Console.WriteLine("Заполните Массив");
+        for (int i = 0; i < sizeArray; i++)
+        {
+            array[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        int a = 1;
+        for (int i = 1; i < sizeArray;)
+        {
+            if (array[i] == array[i-1])
+            {
+                i++;
+            }
+            else
+            {
+                i++;
+                a++;
+            }
+        }
+        Console.WriteLine("различных чисел в массиве"+ a);
