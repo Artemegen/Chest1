@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+namespace test;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Введите длину массива: ");
+        int sizeArray = Convert.ToInt32(Console.ReadLine());
+        int[] array = new int[sizeArray];
+
+        Console.WriteLine("Заполните Массив");
+        for (int i = 0; i < sizeArray; i++)
+        {
+            array[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        
+        for (int i = 1; i < sizeArray; i++)
+        {
+            if (array[i] >= array[i-1])
+            {
+                Console.WriteLine(array[i]);
+            }
+        }
+}
+}
