@@ -1,0 +1,55 @@
+class Programm1
+{
+    static void Main()
+    {
+        Dictionary<String, String> dict = new Dictionary<String, String>();
+
+        bool c = true;
+        while (c)
+        {
+            Console.WriteLine("Введите команду:\n(Добавить запись - 1)\n(Найти номер по имени - 2)\n(Вывести все записи - 3)\n(Выход - 4)");
+            string quest = Console.ReadLine();
+            if (quest != "4")
+            {
+                switch (quest)
+                {
+                    case "1":
+                        Console.WriteLine("Введите имя и номер:");
+                        Console.WriteLine();
+                        dict.Add(Console.ReadLine(), Console.ReadLine());
+                        Console.WriteLine("Запись добавлена");
+                        Console.WriteLine();
+                        break;
+                    case "2":
+                        Console.WriteLine("Введите имя:");
+                        string a = Console.ReadLine();
+                        Console.WriteLine("Номер в базе");
+                        Console.WriteLine(dict[a]);
+                        Console.WriteLine();
+
+                        break;
+                    case "3":
+                        foreach (var (key, value) in dict)
+                        {
+                            Console.WriteLine(key + " : " + value);
+                            Console.WriteLine();
+                        }
+
+
+                        break;
+
+                    default:
+                        Console.WriteLine("нет такой команды");
+                        break;
+                }
+            }
+            else
+            {
+                c = false;
+
+            }
+        }
+
+
+    }
+}
