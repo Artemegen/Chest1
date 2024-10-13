@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Text;
+namespace test;
+
+
+class programm
+{
+
+    static double Car1(double NumOne, double NumTwo)
+    {
+        double sum;
+        sum = (NumOne + NumTwo);
+        return sum;
+    }
+
+    static double Car2(double NumOne)
+    {
+
+        if (NumOne % 2 == 0)
+        {
+            Console.WriteLine("Да");
+        }
+        else
+        {
+            Console.WriteLine("Нет");
+        }
+        return NumOne;
+
+    }
+    static double Car3(double NumOne)
+    {
+        double sum = 1;
+        for (int i = 0; i <= NumOne; i++)
+        {
+            sum *= i;
+        }
+        return sum;
+
+    }
+    static string Car4(string NumOne)
+    {
+        StringBuilder sb = new StringBuilder(NumOne.Length);
+
+        for (int i = NumOne.Length; i-- != 0;)
+
+            sb.Append(NumOne[i]);
+        Console.WriteLine(sb);
+        return sb.ToString();
+    }
+    static string Car5(string NumOne)
+    {
+        {
+            char[] sym = NumOne.ToCharArray();
+            if (IsPalindrom(sym))
+                Console.WriteLine("Палиндром");
+            else
+                Console.WriteLine("Не палиндром");
+        }
+        static bool IsPalindrom(char[] word)
+        {
+            for (int i = 0; i < word.Length / 2; i++)
+                if (word[i] != word[word.Length - 1 - i])
+                    return false;
+            return true;
+        }
+        return "я устал";
+    }
+    
+
+
+
+    static void Main(string[] args)
+    {
+        Car4("Амогус");
+    }
+
+}
+
+ 
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        double average = Srednee(numbers);
+        Console.WriteLine($"Среднее значение массива: {average}");
+
+
+    }
+    static double Srednee(int[] array)
+    {
+        double sum = 0;
+        foreach (int number in array)
+        {
+            sum += number;
+        }
+        return sum / array.Length;
+    }
+}
